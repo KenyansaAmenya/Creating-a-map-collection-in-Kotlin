@@ -1,0 +1,88 @@
+// creating maps using mapOf function
+fun main() {
+    val capitals = mapOf("USA" to "Washington", "Poland" to "Warsaw", "Ukraine" to "Kyiv")
+    // val capitals = mapOf(
+     // pair("USA", "Washington"),
+    // pair("Poland", "Warsaw"),
+    // pair("Ukraine", "Kyiv")
+    // )
+    println(capitals)
+}
+// The result type is Map<k, v>, where k is the type of a key, and v is the type of value.
+
+// finding the value for a key by using box brackets
+
+fun main() {
+    val alphabet: Map<Char, Int> = mapOf('A' to 1, 'B' to 2, 'C' to 3)
+    val number: Int? = alphabet['A']
+    println(number)
+    println(alphabet['B'])
+    println(alphabet['&'])
+}
+
+// adding element ot a map NB just like a regular map is read-only, so it does not have methods that would allow adding or removing elements
+
+fun main() {
+    val map1 = mapOf('A' to "Alex", 'B' to "Bob")
+    val map2 = map1 + ('C' to "Celina")
+    println(map1)
+    println(map2)
+    val map3 = mapOf('D' to "Daniel", 'E' to "Ellen")
+    val map4 = map2 + map3
+    println(map3)
+    println(map4)
+
+}
+
+// you can also remove certain keys from a map using the minus sign
+fun main() {
+    val map1 = mapOf('A' to "Alex", 'B' to "Bob")
+    val map2 = map1 - 'B'
+    println(map1)
+    println(map2)
+}
+
+//checking if a map contains a key using the 'in' keyword
+
+fun main() {
+    val map = mapOf('A' to "Alex", 'B' to "Bob")
+    println('A' in map)
+    println('Z' to map)
+
+}
+
+// checking map size using the 'size' property
+
+fun main() {
+    val map = mapOf('A' to "Alex", 'B' to "Bob")
+    println(map.size)
+}
+
+// Iterating over maps using a for loop
+
+fun main() {
+    val map = mapOf('A' to "Alex", 'B' to "Bob")
+    for (entry in map) {
+        println("${entry.key} is for ${entry.value}")
+    }
+}
+
+// you can also restructure an entry into two variables
+
+fun main() {
+    val map = mapOf('A' to "Alex", 'B' to "Bob")
+    for ((letter, name) in map) {
+        println("$letter is for $name")
+    }
+}
+
+// mutable map using mapOf
+
+fun main() {
+    val map: MutableMap<Char, String> = mutableMapOf('A' to "Alex", 'B' to "Bob")
+    map.put('C', "Celina")
+    map['D'] = "Daria"
+    println(map)
+    map.remove('B')
+    println(map)
+}
